@@ -34,7 +34,7 @@ describe('XHR backend', () => {
 
     it('should throw error on non json file', done => {
       backend.read('en', 'nonjson', function(err, data) {
-        expect(err).to.equal(
+        expect(err.message).to.equal(
           'failed parsing http://localhost:9876/locales/en/nonjson.json to json',
         );
         done();
