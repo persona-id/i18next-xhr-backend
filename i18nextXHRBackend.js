@@ -229,7 +229,11 @@
           try {
             ret = _this.options.parse(data, url);
           } catch (e) {
-            err = 'failed parsing ' + url + ' to json';
+            err = {
+              message: 'failed parsing ' + url + ' to json',
+              error: e,
+              data: data
+            };
           }
 
           if (err) return callback(err, false);
