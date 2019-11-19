@@ -61,6 +61,8 @@ class Backend {
           message: 'failed parsing ' + url + ' to json',
           error: e,
           data,
+          status: xhr.status,
+          response: xhr.response,
         };
       }
       if (err) return callback(err, false);
